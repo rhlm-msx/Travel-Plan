@@ -25,4 +25,9 @@ A Travel Records represents Traveling of `Passengers` from one location to anoth
 
 - To Create a one (travel record) to many (passengers) relationship `Junction Object` is used.
 
-> A Junction Object can be assumed as a table representing relationships between two other objects to create many to many relationship (unique contraints can be used to create one to one).
+> A Junction Object can be assumed as a table representing relationships between two other objects to create many to many relationship.
+
+## Screenshots
+
+![Add Records](add_record_tp.png)
+![Travel Dashboard](travel_dashboard.png)
