@@ -1,18 +1,28 @@
-# Salesforce DX Project: Next Steps
+# Travel Plan
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+> A PoC for Salesforce SFDC Project Bootcamp.
 
-## How Do You Plan to Deploy Your Changes?
+## Concepts of Salesforce Covered Within this PoC
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+1. Trigger for Validation.
+2. LWC Components for creating UI.
+3. Data Fetch From Salesforce Database to UI (via LWC callback).
 
-## Configure Your Salesforce DX Project
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
 
-## Read All About It
+## Description
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+This salesforce app allows you to create travel records, and manage them 
+- [x] Add New Travel Records
+- [x] Dashboard for all travel records.
+- [ ] Filters for dashboard.
+- [ ] Notification Service for upcomming journeys (scheduled execution).
+
+
+## Details
+
+A Travel Records represents Traveling of `Passengers` from one location to another via certain mode of transport.
+
+- To Create a one (travel record) to many (passengers) relationship `Junction Object` is used.
+
+> A Junction Object can be assumed as a table representing relationships between 

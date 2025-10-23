@@ -6,7 +6,7 @@
         <template for:each={travel.passengers} for:item="pass">
             <p class="slds-p-horizontal_small" key={pass.Id}>{pass.Passenger__r.Name}</p>
         </template>
-        <lightning-button value={travel.travel.Id} variant="destructive" label="Remove Trip" onclick={handleDelete} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button value={travel.travel.Id} variant="destructive" label="Remove Trip" onclick={handleDelete} class="slds-m-top_x-small"></lightning-button>
         </lightning-card>
     </template>
 </template>
