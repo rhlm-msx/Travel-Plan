@@ -28,6 +28,14 @@ CustomIndex │ Passenger__c.Source__c │ An unexpected error occurred. │ │
 
 And solution that i found is to add custom index file of Passenger__c.Source__c in .forceignore.
 
+similar issues.
+
+```markdown
+| Type │ Name │ Problem │ Line:Column │ 
+|------|------|---------|-------------|
+| ListView │ TravelingPassenger__c.All_Fields │ Invalid scope:Mine,not allowed  on:TravelingPassenger__c │ (199:16) |
+```
+
 
 
 
