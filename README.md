@@ -5,6 +5,18 @@
 ## Changes
 - I Recently learned that best practice to develop an salesforce application is to use a scratch org, as it allows source tracking which is important to sync the changes made with setup UI and locally, which is a challenge i stumble across while doing the same with Dev Org and unable to reliably sync the changes to and from org.
 
+## CLI LOG
+
+```bash
+
+$ sf org create scratch -f config/project-scratch-def.json -d -a travel_scratch -v mainApp
+
+$ sf project retrieve start
+$ sf project deploy start
+
+```
+
+
 
 ---
 # Travel Plan
