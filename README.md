@@ -17,6 +17,19 @@ $ sf project deploy start
 
 ```
 
+## Issues
+
+While deploying changes to new scratch org after following the source tracking for proper source code management of this app.
+I Stumbled Across following issue.
+
+```markdown
+CustomIndex │ Passenger__c.Source__c │ An unexpected error occurred. │ │ │ │ │ Please include this ErrorId if you │ │ │ │ │ contact support: 1692867926-70468 │ │ │ │ │ (-402318292)
+```
+
+And solution that i found is to add custom index file of Passenger__c.Source__c in .forceignore.
+
+
+
 
 
 ---
