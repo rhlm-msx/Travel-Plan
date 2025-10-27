@@ -37,6 +37,21 @@ similar issues.
 ```
 
 
+### Troubleshooting of sfcli setup in linux
+
+
+`gnome-keyring issue while logging in to org`
+
+```bash
+sudo apt install gnome-keyring
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets)
+
+export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
+export SFDX_DISABLE_KEYCHAIN=true
+```
+
+
 
 
 
