@@ -15,6 +15,9 @@
     <navType>Standard</navType>
     <tabs>Plans</tabs>
     <tabs>Add_Travel_Record</tabs>
+    <tabs>Travel__c</tabs>
+    <tabs>Passenger__c</tabs>
+    <tabs>TravelingPassenger__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Travel_Plan_UtilityBar</utilityBar>
 </CustomApplication>
