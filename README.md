@@ -10,8 +10,9 @@
 ```bash
 
 $ sf org create scratch -f config/project-scratch-def.json -d -a travel_scratch -v mainApp
-
+# Pull Changes
 $ sf project retrieve start
+# Push Changes
 $ sf project deploy start
 
 ```
