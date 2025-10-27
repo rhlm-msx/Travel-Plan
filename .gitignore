@@ -49,3 +49,4 @@ $RECYCLE.BIN/
 
 # VSCODE Project ignore
 .vscode/
+scripts/*.json
