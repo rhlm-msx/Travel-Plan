@@ -7,6 +7,9 @@
     <layoutAssignments>
         <layout>Travel__c-Passenger Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>TravelingPassenger__c-TravelingPassenger Layout</layout>
+    </layoutAssignments>
     <userLicense>External Apps Login</userLicense>
     <userPermissions>
         <enabled>true</enabled>
