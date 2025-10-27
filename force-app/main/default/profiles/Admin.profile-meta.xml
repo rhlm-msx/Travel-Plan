@@ -5,7 +5,7 @@
         <layout>Passenger__c-Passenger Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Travel__c-Travel Layout</layout>
+        <layout>Travel__c-Passenger Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
