@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="New Travel Record">
+    <lightning-record-form
+      object-api-name="Travel__c"
+      layout-type="Full"
+      mode="edit"
+      onsuccess={handleSuccess}>
+    </lightning-record-form>
+  </lightning-card>
+  <lightning-card title="New Passenger Record">
+    <lightning-record-form
+      object-api-name="Passenger__c"
+      layout-type="Full"
+      mode="edit"
+      onsuccess={handleSuccess}>
+    </lightning-record-form>
+  </lightning-card>
+  <lightning-card title="Add Passengers to Travel">
+    <lightning-record-form
+      object-api-name="TravelingPassenger__c"
+      layout-type="Full"
+      mode="edit"
+      onsuccess={handleSuccess}>
+    </lightning-record-form>
+  </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <template for:each={travelData} for:item="travel">
+        <lightning-card key={travel.travel.Id} title={travel.travel.Name}>
+        <p class="slds-p-horizontal_small">{travel.travel.Source__c} -- {travel.travel.Name}</p>
+        <strong class="slds-p-horizontal_small">Passengers: </strong>
+        <template for:each={travel.passengers} for:item="pass">
+            <p class="slds-p-horizontal_small" key={pass.Id}>{pass.Passenger__r.Name}</p>
+        </template>
+        <lightning-button value={travel.travel.Id} variant="destructive" label="Remove Trip" onclick={handleDelete} class="slds-m-top_x-small"></lightning-button>
+        </lightning-card>
+    </template>
+</template>
