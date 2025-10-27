@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Select the model of travel --></help>
+    <label><!-- Mode of Travel --></label>
+    <name>Mode_of_Travel__c</name>
+    <picklistValues>
+        <masterLabel>Bus</masterLabel>
+        <translation><!-- Bus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flight</masterLabel>
+        <translation><!-- Flight --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Train</masterLabel>
+        <translation><!-- Train --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
