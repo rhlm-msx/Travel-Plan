@@ -16,6 +16,15 @@ $ sf project retrieve start
 $ sf project deploy start
 
 ```
+## Import Dummy Data Into Org
+
+Currently records are set to 20 but can be edited in the makefile
+
+```bash
+cd scripts/python/data
+make all
+```
+
 
 ## Issues
 
@@ -163,5 +172,9 @@ A Travel Records represents Traveling of `Passengers` from one location to anoth
 
 ## Screenshots
 
-![Add Records](add_record_tp.png)
-![Travel Dashboard](travel_dashboard.png)
+![Screenshot #1](screenshots/travel_app.png)
+![Screenshot #2](screenshots/travel_app1.png)
+![Screenshot #3](screenshots/travel_app2.png)
+![Screenshot #4](screenshots/travel_app3.png)
+![Screenshot #5](screenshots/travel_app4.png)
+![Screenshot #6](screenshots/travel_app5.png)
