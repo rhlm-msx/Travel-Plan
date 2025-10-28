@@ -50,3 +50,4 @@ $RECYCLE.BIN/
 # VSCODE Project ignore
 .vscode/
 scripts/*.json
+scripts/python/data/*.json

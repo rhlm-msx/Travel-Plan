@@ -1,4 +1,6 @@
+import sys
 import os
+import json
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 import faker
@@ -6,6 +8,7 @@ import random
 
 
 objectmapper = {}
+objects_path = '../../force-app/main/default/objects'
 
 def getSampleData(field):
     label = field['fullName'].split('__c')[0].strip()
@@ -22,10 +25,10 @@ def getSampleData(field):
         'autonumber': lambda x: None,
         'text': lambda x: x,
         'picklist': lambda x: random.choice([ a['fullName'] for a in x['valueSet']]),
-        'datetime': lambda x: x,
+        'datetime': lambda x: str(x).replace(' ', 'T'),
         'phone': lambda x: x,
         'email': lambda x: x,
-        'masterdetail': lambda x: objectmapper.get(x['label'], None)
+        'masterdetail': lambda x: objectmapper.get(x['label'], 'Ref1')
     }
     res = field
     found = False
@@ -42,16 +45,6 @@ def getSampleData(field):
     
 
 
-
-
-
-
-objects_path = 'force-app/main/default/objects'
-
-
-
-
-
 class DummyObject:
     def __init__(self, path):
         fields_path = f'{path}/fields'
@@ -65,8 +58,15 @@ class DummyObject:
                     with open(f'{p}/{file_name}') as file:
                         data = file.read()
                         self.handleFields(data)
+        remove_keys = []
         for key, field in self.fields.items():
-            self.fields[key]['value'] = getSampleData(field)
+            val = getSampleData(field)
+            self.fields[key]['value'] = val
+            if val == None: remove_keys += [ key ]
+
+        for key in remove_keys:
+            self.fields.pop(key)
+                
 
 
     def __repr__(self):
@@ -79,6 +79,7 @@ class DummyObject:
     
     def handleObject(self, data):
         bs = BeautifulSoup(data, 'xml')
+        self.suffix = '__c' if bs.find('CustomObject') != None else ''
         self.label = bs.find('label').decode_contents()
         objectmapper[self.label] = self
         self.fields = {}
@@ -88,12 +89,15 @@ class DummyObject:
             if type(child) is Tag:
                 field[child.name] = child.text
         field['fullName'] = field['label']
+        field['label'] = 'Name'
+        field['suffix'] = ''
         self.fields[field['label']] = field
 
     def handleFields(self, data):
         bs = BeautifulSoup(data, 'xml')
         for field in bs.find_all('CustomField'):
             cfield = {}
+            cfield['suffix']  = '__c'
             for child in field.childGenerator():
                 if type(child) is Tag:
                     if child.name == 'valueSet':
@@ -107,13 +111,30 @@ class DummyObject:
                         cfield['valueSet'] = values
                     else:
                         cfield[child.name] = child.text
-            self.fields[cfield['label']] = cfield
+            self.fields[cfield['fullName']] = cfield
+
+
+    def getRecordJSON(self, index=1):
+        return {
+            'attributes': {
+                'type': self.label + self.suffix,
+                'referenceId': f'{self.label+self.suffix}Ref{index}'
+            },
+            **{ f'{name}': item['value'] if item['type'].lower() != 'masterdetail' else f'{name}Ref{index}' for name, item in self.fields.items()}
+        }
                 
 
 
 
+try:
+    object_name = sys.argv[1]
+    object_count = int(sys.argv[2])
+    json_data = {"records": [ DummyObject(f'{objects_path}/{object_name}').getRecordJSON(i) for i in range(1, object_count + 1) ]}
+    with open(f'data/{object_name}.json', 'w') as file:
+        file.write(json.dumps(json_data))
+except Exception as e:
+    print(f'[ERROR]: {e}')
+    print(f'[FORMAT]: python {sys.argv[0]} "object_name" "count"')
 
 
-print(DummyObject(f'{objects_path}/Travel__c'))
-print(DummyObject(f'{objects_path}/Passenger__c'))
-print(DummyObject(f'{objects_path}/TravelingPassenger__c'))
+

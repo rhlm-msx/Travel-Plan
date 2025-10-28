@@ -5,4 +5,5 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-insert new Account(Name='Mr Name');
+List<Travel__c> pass = [SELECT Id FROM Travel__c];
+delete pass;
