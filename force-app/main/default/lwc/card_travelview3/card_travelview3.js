@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 const Status = {
     UPCOMMING: 'Upcomming',
@@ -58,10 +58,9 @@ class Trip{
 
 
 export default class Card_travelview3 extends LightningElement {
-    trip;
+    @api trip;
     constructor(){
         super()
-        this.trip = new Trip()
     }
     renderedCallback(){
     }

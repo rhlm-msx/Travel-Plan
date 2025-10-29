@@ -3,8 +3,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>card_travelview3</componentName>
-                <identifier>c_card_travelview3</identifier>
+                <componentName>view_travelrecords</componentName>
+                <identifier>c_view_travelrecords</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
