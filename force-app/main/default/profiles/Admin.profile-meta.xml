@@ -67,6 +67,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Trip_Record</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Trips</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>

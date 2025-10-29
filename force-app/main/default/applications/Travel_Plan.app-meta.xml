@@ -14,6 +14,7 @@
     <label>Travel Plan</label>
     <navType>Standard</navType>
     <tabs>Plans</tabs>
+    <tabs>Trip_Record</tabs>
     <tabs>Trips</tabs>
     <tabs>Add_Travel_Record</tabs>
     <tabs>Travel__c</tabs>
