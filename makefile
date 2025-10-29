@@ -1,5 +1,5 @@
 scratch:
-	sf org create scratch -f config/project-scratch-def.json -d -a travel_scratch
+	sf org create scratch -f config/project-scratch-def.json -d -a travel_scratch -v mainApp
 
 delete:
 	sf org delete scratch -o travel_scratch

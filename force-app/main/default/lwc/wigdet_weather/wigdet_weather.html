@@ -1,5 +1,12 @@
 <template>
-    Weather Widget
-    Basic Relevent Information about record.
-    The Weather Details of Destination
+    <lightning-card>
+        <h3 slot="title">
+            Weather Report For {destination}
+        </h3>
+        <lightning-carousel>
+            <lightning-carousel-image lwc:ref="img1"></lightning-carousel-image>
+            <lightning-carousel-image lwc:ref="img2"></lightning-carousel-image>
+            <lightning-carousel-image lwc:ref="img3"></lightning-carousel-image>
+        </lightning-carousel>
+    </lightning-card>
 </template>
