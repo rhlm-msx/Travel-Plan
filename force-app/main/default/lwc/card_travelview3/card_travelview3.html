@@ -1,0 +1,41 @@
+<template>
+    <a href="#">
+    <lightning-card>
+        <div class='' slot="title">
+            <lightning-icon icon-name={trip.icon} size="small"></lightning-icon>
+            <lightning-badge label={trip.mode}></lightning-badge>
+            Travel 
+            <lightning-badge label={trip.status}></lightning-badge>
+        </div>
+        <div class="slds-box slds-p-around_small slds-grid">
+
+            <div class="slds-col slds-box">
+            <lightning-icon icon-name="utility:checkin"></lightning-icon>
+            <span>
+                <span>{trip.source_city}</span>
+                <br/>
+                <span>{trip.departure_date}</span>
+            </span>
+            </div>
+
+            <div class="slds-col slds-size_2-of-3" style="height:100%">
+            <span class="slds-m-vertical_large" style="border: 1px dashed black;width:100%;display:flex;">{trip.duration}</span>
+            </div>
+            
+            <div class="slds-col slds-box">
+            <lightning-icon icon-name="utility:checkin"></lightning-icon>
+            <span>
+                {trip.destination_city}
+                <br/>
+                <span>{trip.departure_date}</span>
+            </span>
+            </div>
+        </div>
+   
+    <div>
+        <c-sum_passenger></c-sum_passenger> 
+    </div>
+
+    </lightning-card>
+    </a>
+</template>

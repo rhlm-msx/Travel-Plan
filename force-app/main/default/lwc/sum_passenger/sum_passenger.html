@@ -1,0 +1,10 @@
+<template>
+  <div class="slds-box slds-grid">
+    <div class="slds-box slds-m-right_medium slds-col slds-size_1-of-4">Passengers <span>{passengers_count}</span></div>
+    <div class="slds-grid slds-gutters slds-size_3-of-4 slds-wrap">
+        <template for:each={passengers} for:item="rec">
+            <span key={rec} class="slds-box slds-size_1-of-3 slds-col">{rec.name}</span>
+        </template>
+    </div>
+  </div> 
+</template>
