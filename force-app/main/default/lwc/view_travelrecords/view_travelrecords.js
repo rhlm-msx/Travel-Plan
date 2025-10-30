@@ -1,4 +1,7 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
+import getTravelData from '@salesforce/apex/TravelsDataController.getTravelData';
+import getPassengers from '@salesforce/apex/TravelsDataController.getPassengers';
+import deleteRecord from '@salesforce/apex/TravelsDataController.deleteRecord';
 
 const Status = {
     UPCOMMING: 'Upcomming',
@@ -20,6 +23,7 @@ const MOT_ICONS = {
 
 class Trip{
     constructor(source='Lucknow'){
+        this.Id = '';
         this.source_city = source;
         this.destination_city = 'Pune'
         this.departure_date = new Date()
@@ -55,13 +59,37 @@ class Trip{
         return fmt;
     }
 }
+
+class Passenger{
+    constructor(id, name, email, phone){
+        this.Id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+}
+
 export default class View_travelrecords extends LightningElement {
     travels = []
+    passengers = []
 
 
-    constructor(){
-        super();
-        this.travels = [new Trip(), new Trip('Pune'), new Trip('Gwalior')]
+    @wire(getTravelData)
+    fetchdata({data, error}){
+        if(data){
+            data.forEach(travel => {
+                let trip = new Trip();
+                trip.Id = travel.Id;
+                trip.destination_city = travel.Name;
+
+                this.travels.push(trip);
+            })
+        }else if(error){
+            console.log(error);
+
+        }
     }
+
+
     
 }

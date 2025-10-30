@@ -7,7 +7,7 @@ public with sharing class TravelsDataController {
     @AuraEnabled(cacheable=true)
     public static List<TravelingPassenger__c> getPassengers(Id travelId){
         try {
-            return [SELECT Id, Passenger__r.Name FROM TravelingPassenger__c WHERE Travel__c = :travelId];
+            return [SELECT Id, Passenger__r.Name, Passenger__r.Email__c, Passenger__r.Mobile__c FROM TravelingPassenger__c WHERE Travel__c = :travelId];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }

@@ -1,4 +1,5 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
+import getPassengers from '@salesforce/apex/TravelsDataController.getPassengers';
 
 const Status = {
     UPCOMMING: 'Upcomming',
@@ -57,11 +58,32 @@ class Trip{
 }
 
 
-export default class Card_travelview3 extends LightningElement {
-    @api trip;
-    constructor(){
-        super()
+class Passenger {
+    constructor(id, name, email, phone) {
+        this.Id = id;
+        this.Name = name;
+        this.Email = email;
+        this.Mobile = phone;
     }
-    renderedCallback(){
+}
+
+export default class Card_travelview3 extends LightningElement {
+    @api trip = new Trip();
+    passengers = []
+    constructor(){
+        super();
+        console.log('Trip', this.trip);
+    }
+    renderCallback(){
+        getPassengers({travelId: this.trip.Id}).then(res => {
+            res.forEach(pass => {
+                pass = pass.Passenger__r;
+                let passenger = new Passenger(pass.Id, pass.Name, pass.Email__c, pass.Mobile__c);
+                this.passengers.push(passenger);
+                console.log('pass', this.passengers);
+            })
+        }).catch(error=>{
+            console.log('error', error);
+        })
     }
 }

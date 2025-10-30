@@ -3,5 +3,5 @@
     <description>Notification Service</description>
     <disableProtocolSecurity>false</disableProtocolSecurity>
     <isActive>true</isActive>
-    <url>https://www.ntfy.sh</url>
+    <url>https://ntfy.sh</url>
 </RemoteSiteSetting>
