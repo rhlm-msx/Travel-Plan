@@ -5,5 +5,7 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-List<Travel__c> pass = [SELECT Id FROM Travel__c];
-delete pass;
+List<AsyncApexJob> ap = [SELECT Id FROM AsyncApexJob WHERE Id = '707JW00001I5vbT'];
+delete ap;
+
+    

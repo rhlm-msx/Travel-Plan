@@ -9,6 +9,18 @@
         <apexClass>TravelsDataController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>notifyPassengers</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>testTravelDataController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>utils</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <layoutAssignments>
         <layout>Passenger__c-Passenger Layout</layout>

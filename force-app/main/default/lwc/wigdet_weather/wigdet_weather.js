@@ -1,12 +1,11 @@
 import { LightningElement } from 'lwc';
 
 export default class Wigdet_weather extends LightningElement {
-    destination = 'Lucknow'
-    source = 'Pune'
+    destination = 'Pune'
+    source = 'Lucknow'
 
     constructor(){
         super();
-        console.log('script called');
     }
 
     connectedCallback(){

@@ -6,7 +6,7 @@ from bs4.element import Tag
 import faker
 import random
 
-
+EMAIL_DEFAULT = "boparil396@dropeso.com"
 objectmapper = {}
 objects_path = '../../force-app/main/default/objects'
 
@@ -27,7 +27,7 @@ def getSampleData(field):
         'picklist': lambda x: random.choice([ a['fullName'] for a in x['valueSet']]),
         'datetime': lambda x: str(x).replace(' ', 'T'),
         'phone': lambda x: x,
-        'email': lambda x: x,
+        'email': lambda x: EMAIL_DEFAULT if EMAIL_DEFAULT else x,
         'masterdetail': lambda x: objectmapper.get(x['label'], 'Ref1')
     }
     res = field
